@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/bothdrop.css" />
+    <link rel="stylesheet" href="./style/nav-modal.css" />
+    <link rel="stylesheet" href="./style/home-cont.css" />
+    <link rel="stylesheet" href="./style/glider.css" />
+    <link rel="stylesheet" href="./style/info-footer.css" />
+    <link rel="stylesheet" href="./style/main-footer.css" />
+    <link
+      rel="shortcut icon"
+      href="https://static-assets-web.flixcart.com/www/promos/new/20150528-140547-favicon-retina.ico"
+      type="image/x-icon"
+    />
+
+    <title>Flipkart Project</title>
+  </head>
+  <body>
+    <header id="navbar"></header>
+    <main>
+      <div id="megadrop"></div>
+      <div id="links-nav"></div>
+      <div id="category-nav"></div>
+      <div id="slider-container"></div>
+    </main>
+    <footer>
+      <div id="info-footer"></div>
+      <div id="main-footer"></div>
+    </footer>
+    <script type="module">
+      let navbar = document.querySelector("#navbar");
+      import { Navbar } from "./components/navbar.js";
+      navbar.innerHTML = Navbar();
+
+      let sliderCont = document.querySelector("#slider-container");
+      import { homeSliders } from "./components/slider-container.js";
+      sliderCont.innerHTML = homeSliders();
+
+      let infoFoo = document.querySelector("#info-footer");
+      import { informFooter } from "./components/info-footer.js";
+      infoFoo.innerHTML = informFooter();
+
+      let mainFoo = document.querySelector("#main-footer");
+      import { mainFooter } from "./components/main-footer.js";
+      mainFoo.innerHTML = mainFooter();
+
+      let megaDrop = document.querySelector("#megadrop");
+      import { megadrop, subdrop } from "./components/main.js";
+      megaDrop.innerHTML = megadrop();
+    </script>
+    <script type="module" src="./script/navbarScript.js"></script>
+    <script src="./script/glider.js"></script>
+    <script type="module" src="./script/homeData.js"></script>
+    <script src="./script/data.js"></script>
+  </body>
+</html>

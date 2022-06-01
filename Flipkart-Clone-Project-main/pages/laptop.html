@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="../style/laptop.css" />
+    <link rel="stylesheet" href="../style/bothdrop.css" />
+    <link rel="stylesheet" href="../style/nav-modal.css" />
+    <link rel="stylesheet" href="../style/info-footer.css" />
+    <link rel="stylesheet" href="../style/main-footer.css" />
+  </head>
+  <body>
+    <header id="navbar"></header>
+    <div id="megadrop"></div>
+    <div id="main">
+      <div id="filter">
+        <h2>Filter</h2>
+        <hr />
+
+        <h5 id="catagory">CATAGORY</h5>
+        <p>Computer</p>
+        <p>Laptop</p>
+        <hr />
+        <div>
+          <h4>PRICE</h4>
+          <input type="range" min="1" max="100" value="50" id="priceinp" />
+          <div id="pricediv">
+            <select name="" id="min">
+              <option value="min">Min</option>
+            </select>
+
+            <select name="" id="max">
+              <option value="max">75000 +</option>
+              <option value="2000">20000</option>
+              <option value="30000">30000</option>
+            </select>
+          </div>
+
+          <input type="checkbox" name="assu" id="ass" />
+          <img
+            src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png"
+            class="ass"
+            alt=""
+          />
+        </div>
+
+        <h2 id="process">PROCESSOR</h2>
+        <input type="text" id="pro" placeholder="Search Processor" />
+        <h4><input type="checkbox" name="" id="" />Core i3</h4>
+
+        <h4><input type="checkbox" name="" id="" />Ryzen 3 Dual Core</h4>
+        <h4><input type="checkbox" name="" id="" />Celeron Dual Core</h4>
+        <h4><input type="checkbox" name="" id="" />APU Dual Core A4</h4>
+        <h4><input type="checkbox" name="" id="" />Snapdragon 7c Gen 2</h4>
+        <h4><input type="checkbox" name="" id="" />Core i5</h4>
+        <h4><input type="checkbox" name="" id="" />Core i7</h4>
+        <h4><input type="checkbox" name="" id="" />Dual core</h4>
+        <h4><input type="checkbox" name="" id="" />Pentium Silver</h4>
+      </div>
+
+      <div id="productContainer">
+        <p class="path">Home > Container > Laptop</p>
+        <h4 class="showing-data">Showing 1 – 24 of 139 results for "laptop"</h4>
+        <div id="menu">
+          <button id="sort">Sort By</button>
+          <button id="rele">Relevance</button>
+          <button id="popu">Popularity</button>
+          <button id="price">Price -- Low to High</button>
+          <button id="price2">Price -- High to Low</button>
+          <button id="newet">Newest First</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="info-footer"></div>
+      <div id="main-footer"></div>
+    </footer>
+
+    <script>
+      let sort = document.getElementById("sort");
+
+      sort.addEventListener("click", () => {
+        sort.style.borderBottom = "3px solid red";
+        sort.style.width = "80px";
+        rele.style.borderBottom = "none";
+        popu.style.borderBottom = "none";
+      });
+
+      let rele = document.getElementById("rele");
+      rele.style.borderBottom = "3px solid red";
+      rele.style.width = "80px";
+      rele.addEventListener("click", () => {
+        sort.style.borderBottom = "none";
+        popu.style.borderBottom = "none";
+        rele.style.borderBottom = "3px solid red";
+        rele.style.width = "80px";
+      });
+      let popu = document.getElementById("popu");
+      popu.addEventListener("click", () => {
+        sort.style.borderBottom = "none";
+        rele.style.borderBottom = "none";
+        popu.style.borderBottom = "3px solid red";
+        popu.style.width = "80px";
+      });
+    </script>
+  </body>
+</html>
+<script type="module">
+  console.log("hello");
+  import { megadrop, subdrop } from "../components/main.js";
+
+  console.log(megadrop);
+  let mega = document.querySelector("#megadrop");
+  mega.innerHTML = subdrop();
+
+  let infoFoo = document.querySelector("#info-footer");
+  import { informFooter } from "../components/info-footer.js";
+  infoFoo.innerHTML = informFooter();
+
+  let mainFoo = document.querySelector("#main-footer");
+  import { mainFooter } from "../components/main-footer.js";
+  mainFoo.innerHTML = mainFooter();
+
+  let navbar = document.querySelector("#navbar");
+  import { Navbar } from "../components/navbar.js";
+  navbar.innerHTML = Navbar();
+</script>
+<script type="module" src="../script/navbarScript.js"></script>
+<script src="../script/laptop.js"></script>

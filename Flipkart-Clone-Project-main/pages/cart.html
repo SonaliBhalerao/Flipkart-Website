@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta itemName="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/cart.css" />
+    <link rel="stylesheet" href="../style/nav-modal.css" />
+    <link rel="stylesheet" href="../style/info-footer.css" />
+    <link rel="stylesheet" href="../style/main-footer.css" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <header id="navbar"></header>
+    <main>
+      <div id="cart-container"></div>
+      <div class="total">
+        <button class="chkout" onclick="window.location.href='./payment.html'">
+          Proceed to Checkout
+        </button>
+        <p class="cartTotal">0</p>
+      </div>
+    </main>
+    <footer>
+      <div id="info-footer"></div>
+      <div id="main-footer"></div>
+    </footer>
+  </body>
+</html>
+<script type="module">
+  let infoFoo = document.querySelector("#info-footer");
+  console.log(infoFoo);
+  import { informFooter } from "../components/info-footer.js";
+  infoFoo.innerHTML = informFooter();
+
+  let mainFoo = document.querySelector("#main-footer");
+  import { mainFooter } from "../components/main-footer.js";
+  mainFoo.innerHTML = mainFooter();
+
+  // navbar >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  let navbar = document.querySelector("#navbar");
+  import { Navbar } from "../components/navbar.js";
+  navbar.innerHTML = Navbar();
+</script>
+<script type="module" src="../script/navbarScript.js"></script>
+<script>
+  var cartData = JSON.parse(localStorage.getItem("product")) || [];
+  console.log(cartData);
+  function displayData(items) {
+    document.querySelector("#cart-container").innerHTML = "";
+    items.map((el, index) => {
+      var itemDiv = document.createElement("div");
+      itemDiv.setAttribute("class", "cart-item");
+
+      var prod = document.createElement("div");
+      prod.setAttribute("class", "prod-desc");
+      var img = document.createElement("img");
+      img.setAttribute("src", el.thumbnail);
+      img.setAttribute("class", "cart-item-img");
+      var itemName = document.createElement("p");
+      itemName.innerText = el.title;
+      prod.append(img, itemName);
+      var price = document.createElement("p");
+      price.innerText = "₹" + Math.floor(el.price.extracted * 71);
+
+      var qtyDiv = document.createElement("div");
+      qtyDiv.setAttribute("class", "qty-div");
+      var incQty = document.createElement("div");
+      incQty.setAttribute("class", "incbtn");
+      incQty.addEventListener("click", function () {
+        incQuant(index);
+      });
+      incQty.innerText = "+";
+      var qty = document.createElement("p");
+      qty.innerText = el.qty;
+      var decQty = document.createElement("div");
+      decQty.setAttribute("class", "decbtn");
+      decQty.addEventListener("click", function () {
+        decQuant(index);
+      });
+      decQty.innerText = "-";
+      qtyDiv.append(incQty, qty, decQty);
+
+      itemDiv.append(prod, qtyDiv, price);
+      document.querySelector("#cart-container").append(itemDiv);
+    });
+  }
+
+  function showTotal() {
+    var total = cartData.reduce((acc, el) => {
+      return acc + Math.floor(el.price.extracted * 71 * el.qty);
+    }, 0);
+    document.querySelector(".cartTotal").innerText = "₹" + total;
+  }
+
+  function incQuant(index) {
+    if (cartData[index].qty == 5) {
+      alert("More than 5 items can't be added for the same Product");
+      return;
+    }
+    cartData[index].qty++;
+
+    localStorage.setItem("product", JSON.stringify(cartData));
+    displayData(cartData);
+    showTotal();
+  }
+
+  function decQuant(index) {
+    cartData[index].qty--;
+    if (cartData[index].qty == 0) {
+      cartData.splice(index, 1);
+    }
+
+    localStorage.setItem("product", JSON.stringify(cartData));
+    displayData(cartData);
+    showTotal();
+  }
+
+  displayData(cartData);
+  showTotal();
+</script>

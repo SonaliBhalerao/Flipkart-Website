@@ -1,0 +1,94 @@
+  body{
+            padding: 0;
+            margin: 0;
+            background-color: #f1f3f6;
+            padding-bottom: 50px;
+        }
+        #container1 > div, #container1{
+            box-sizing: border-box;
+        }
+        #upper{
+            background-color: #f1efef;
+            padding: 8px;
+            width: 1350px;
+        }
+        h1{
+            font-weight: 500;
+            font-size: 20px;
+            box-sizing: border-box;
+            color: #212121;
+            line-height: 1.4;
+            font-weight: bold;
+        }
+        p{
+            line-height: 1.45;
+            font-size: 12px;
+            color: #878787;
+            font-family: Roboto,Arial,sans-serif;
+            letter-spacing: 0;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            box-sizing: border-box;
+            text-align: justify;
+        } 
+        a{
+            color: black;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        p > a{
+            color:rgb(16, 124, 196);
+        }
+        a:hover{
+            color: rgb(16, 124, 196);
+        }
+        .img{
+            padding-top: 14.39%;
+            position:relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            align-items: center;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .carouselCell:before{
+            display: block;
+        }
+        .three{
+            display: flex;
+            /* background-color: rgb(167, 164, 164); */
+            padding: 5px;
+            margin-top: 25px;
+        }
+        .three1{
+            display: flex;
+            /* background-color: rgb(167, 164, 164); */
+            padding: 5px;
+        }
+        .carousel:after {
+            display: none !important;
+        }
+        .thr{
+            padding: 5px;
+        }
+        .five{
+            display: flex;
+        }
+        .five2{
+            display: flex;
+            padding-top: 0;
+            padding-bottom: 0;
+            justify-content: space-around;
+        }
+        #six{
+            display: flex;
+            gap: 5px;
+
+        }
+        #six > div > div{
+            text-align: center;
+        }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/bothdrop.css" />
+    <link rel="stylesheet" href="../style/nav-modal.css" />
+    <link rel="stylesheet" href="../style/info-footer.css" />
+    <link rel="stylesheet" href="../style/main-footer.css" />
+  </head>
+  <body>
+    <header id="navbar"></header>
+    <div id="searchdiv" style="width: 350px">
+      <input
+        id="searchbar"
+        onkeyup="search()"
+        placeholder="Search"
+        name="keyword"
+        class="search"
+      />
+    </div>
+    <div id="megadrop"></div>
+
+    <div id="main">
+      <div id="filter">
+        <h2>Filter</h2>
+
+        <hr />
+        <h5>Catagory</h5>
+        <br />
+        <p>Computer</p>
+        <p>Laptop</p>
+
+        <h2 id="process">PROCESSOR</h2>
+        <h4><input type="checkbox" name="" id="" />Core i3</h4>
+
+        <h4><input type="checkbox" name="" id="" />Ryzen 3 Dual Core</h4>
+        <h4><input type="checkbox" name="" id="" />Celeron Dual Core</h4>
+        <h4><input type="checkbox" name="" id="" />APU Dual Core A4</h4>
+        <h4><input type="checkbox" name="" id="" />Snapdragon 7c Gen 2</h4>
+        <h4><input type="checkbox" name="" id="" />Core i5</h4>
+        <h4><input type="checkbox" name="" id="" />Core i7</h4>
+        <h4><input type="checkbox" name="" id="" />Dual core</h4>
+        <h4><input type="checkbox" name="" id="" />Pentium Silver</h4>
+      </div>
+
+      <div id="productContainer">
+        <p class="path">Home > Container > Laptop</p>
+        <h4 class="showing-data">
+          Showing 1 – 24 of 139 results for "Inverter"
+        </h4>
+        <div id="menu">
+          <button id="sort">Sort By</button>
+          <button id="rele">Relevance</button>
+          <button id="popu">Popularity</button>
+          <button id="l2h">Price -- Low to High</button>
+          <button id="h2l">Price -- High to Low</button>
+          <button id="newet">Newest First</button>
+        </div>
+        <div id="productdiv"></div>
+      </div>
+    </div>
+    <footer>
+      <div id="info-footer"></div>
+      <div id="main-footer"></div>
+    </footer>
+  </body>
+</html>
+<script type="module">
+  console.log("hello");
+  import { megadrop, subdrop } from "../components/main.js";
+
+  console.log(megadrop);
+  let mega = document.querySelector("#megadrop");
+  mega.innerHTML = subdrop();
+
+  let infoFoo = document.querySelector("#info-footer");
+  console.log(infoFoo);
+  import { informFooter } from "../components/info-footer.js";
+  infoFoo.innerHTML = informFooter();
+
+  let mainFoo = document.querySelector("#main-footer");
+  import { mainFooter } from "../components/main-footer.js";
+  mainFoo.innerHTML = mainFooter();
+
+  let navbar = document.querySelector("#navbar");
+  import { Navbar } from "../components/navbar.js";
+  navbar.innerHTML = Navbar();
+</script>
+<script type="module" src="../script/navbarScript.js"></script>
+<script src="../script/script.js"></script>

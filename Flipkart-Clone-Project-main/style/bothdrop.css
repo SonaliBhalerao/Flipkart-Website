@@ -1,0 +1,467 @@
+/* megadrop css start here>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#navigation a,
+#container a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+#navigation a:hover,
+#container a:hover {
+  color: rgb(99, 177, 250);
+}
+#container {
+  
+  /* border:1px solid red; */
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.main {
+  width: 100px;
+  height: 125px;
+  /* border:1px solid black; */
+  font-weight: 500;
+  font-size: 14px;
+}
+.main > img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+.main > ul {
+  display: none;
+}
+#sub1 {
+  display: none;
+}
+#cosub > li > ul {
+  display: none;
+}
+p {
+  text-align: center;
+  /* border:1px solid teal; */
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: -7px;
+}
+
+#cosub {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border: 1px solid rgb(238, 234, 234);
+  background-color: white;
+  z-index: 10;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: -2px;
+  padding: 0;
+}
+
+#cosub > li {
+  padding-left: 12px;
+  font-weight: 500;
+  /* font-size: 14px; */
+  width: 200px;
+  padding-top: 20px;
+  /* text-align: center; */
+}
+#cosub > li > ul > li {
+  width: 260px;
+  padding-top: 20px;
+  font-weight: 500;
+  /* font-size: 14px */
+}
+.main:hover > ul {
+  display: block;
+  position: absolute;
+}
+.main > ul > li:hover {
+  background-color: rgb(248, 246, 246);
+}
+
+#cosub > li:hover > ul {
+  display: block;
+  position: absolute;
+  background-color: white;
+}
+p:hover {
+  color: rgb(99, 99, 250);
+}
+#cosub > li > ul > li:hover {
+  background-color: rgb(248, 246, 246);
+  color: rgb(99, 177, 250);
+}
+#cosub > li > ul > li {
+  padding-left: 12px;
+}
+ul > li > ul {
+  margin-left: 188px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+  border: 1px solid rgb(238, 234, 234);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#sub1 {
+  margin-top: -37px;
+}
+#sub2 {
+  margin-top: -73px;
+}
+#sub3 {
+  margin-top: -109px;
+}
+#sub4 {
+  margin-top: -144px;
+}
+#sub5 {
+  margin-top: -180px;
+}
+#sub6 {
+  margin-top: -215px;
+}
+#sub7 {
+  margin-top: -251px;
+}
+#sub8 {
+  margin-top: -286px;
+}
+#sub9 {
+  margin-top: -322px;
+}
+#sub10 {
+  margin-top: -357px;
+}
+#sub11 {
+  margin-top: -393px;
+}
+/* megadrop css end here>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* subdrop css start here>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+#predrop {
+  padding-top: 3rem;
+}
+#header-drop {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  /* margin: auto; */
+  padding-top: 3rem;
+}
+/* <<------------------Navbar area---------------->> */
+#navigation {
+  margin-bottom: 10px;
+  position: relative;
+  /* border:2px solid red; */
+}
+#navigation > ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+#navigation > ul > li {
+  font-size: 17px;
+}
+li > a {
+  text-decoration: none;
+  color: #333;
+}
+/* li>a:hover{
+    color: rgb(99, 177, 250);
+} */
+.navLink > li:hover > a {
+  color: rgb(99, 177, 250);
+}
+
+/* <<----------------------DropDown------------------>> */
+.sub-nav {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 29px 25px;
+  box-sizing: border-box;
+  visibility: hidden;
+  /* Border:2px solid red; */
+}
+#sale:hover .sub-nav {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+.sub-nav > div:not(:first-child) {
+  margin-left: 73px;
+}
+.col > ul {
+  width: 150px;
+  list-style: none;
+  padding-left: 10px;
+  font-size: 15px;
+}
+.col > ul > li {
+  font-size: 15px;
+}
+.col > ul > li:not(:first-child) {
+  padding: 5px 0px;
+  /* color: #767777; */
+}
+.collightCol > ul > li:not(:first-child) {
+  color: #767777;
+}
+/* <<--------------Womens--------------->> */
+.sub-nav2 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 29px 25px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav2 > div:not(:first-child) {
+  margin-left: 73px;
+}
+
+#women:hover .sub-nav2 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+.col {
+  width: 11%;
+}
+
+/* <<--------------Men-------------->> */
+.sub-nav3 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 29px 25px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav3 > div:not(:first-child) {
+  margin-left: 73px;
+}
+
+#men:hover .sub-nav3 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<--------------Kids-------------->> */
+
+.sub-nav4 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 29px 25px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav4 > div:not(:first-child) {
+  margin-left: 60px;
+}
+
+#kids:hover .sub-nav4 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+/* <<-------------YoungAdults-------------------->> */
+.sub-nav5 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 29px 25px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav5 > div:not(:first-child) {
+  margin-left: 60px;
+}
+
+#YoungAdults:hover .sub-nav5 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<-----------------ActiveWear--------------->> */
+
+.sub-nav6 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  justify-content: center;
+  width: 100%;
+  padding: 29px 50px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav6 > div:not(:first-child) {
+  margin-left: 50px;
+}
+
+#Activewear:hover .sub-nav6 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<-------------------Home-------------->> */
+.sub-nav7 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  /* justify-content: center; */
+  width: 100%;
+  padding: 29px 50px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav7 > div:not(:first-child) {
+  margin-left: 45px;
+}
+
+#home:hover .sub-nav7 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<------------------Beauty---------------->> */
+
+.sub-nav8 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  /* justify-content: center; */
+  width: 100%;
+  padding: 29px 50px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav8 > div:not(:first-child) {
+  margin-left: 45px;
+}
+
+#beauty:hover .sub-nav8 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<-------------------Designer----------------->> */
+
+.sub-nav9 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  /* justify-content: center; */
+  width: 100%;
+  padding: 29px 50px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav9 > div:not(:first-child) {
+  margin-left: 45px;
+}
+
+#designer:hover .sub-nav9 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<---------------------Gifts------------------>> */
+
+.sub-nav10 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  justify-content: center;
+  width: 100%;
+  padding: 29px 50px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav10 > div:not(:first-child) {
+  margin-left: 0px;
+}
+
+#gifts:hover .sub-nav10 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+/* <<----------------Brands-------------->> */
+.sub-nav11 {
+  display: flex;
+  position: absolute;
+  /* border-bottom: 2px solid rebeccapurple; */
+  top: 30px;
+  left: 1px;
+  background-color: #f9f9f9;
+  justify-content: center;
+  width: 100%;
+  padding: 29px 40px;
+  box-sizing: border-box;
+  visibility: hidden;
+  margin-top: -10px;
+}
+.sub-nav11 > div:not(:first-child) {
+  margin-left: 35px;
+}
+
+#brands:hover .sub-nav11 {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+#brandsName > p {
+  padding: 3px 0px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+/* subdropdown ends here>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */

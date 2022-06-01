@@ -1,0 +1,149 @@
+ *{
+     margin: 0%;
+     padding: 0%;
+     box-sizing: border-box;
+     font-family: 'Roboto', sans-serif;
+    
+ }
+ body{
+     background-color: #f0f2f5;
+ }
+ #main{
+     display: flex;
+
+ }
+ /* filter */
+#filter{
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 1%;
+    width: 35%;
+    height: 900px;
+    background-color: white;
+    /* border: 1px solid red; */
+    padding: 20px;
+    display: grid;
+  
+}
+#filter hr{
+    height: 2px;
+    margin-top: -10%;
+}
+/* #filter p{
+  
+    margin-left: 20px;
+    margin-top: -10%;
+    color: rgba(38, 38, 38, 0.524);
+} */
+#catagory{
+    font-size: 17px;
+    margin-top: -15%;
+}
+#filter p{
+    margin-left: 20px;
+    margin-top: -15%;
+    font-size: 17px;
+    color: rgba(74, 74, 74, 0.531);
+    margin-bottom: 0;
+}
+#pricediv{
+ display: flex;
+ justify-content: space-between;
+
+
+}
+#min{
+    font-size: 22px;
+}
+#max{
+    font-size: 22px;
+    /* border-bottom: 1px solid black; */
+}
+#priceinp{
+    width: 80%;
+}
+.ass{
+    /* height: 20px; */
+    width: 150px;
+    margin-top: 5%;
+
+}
+#ass{
+   
+    font-size: large;
+    height: 40px;
+    width: 20px;
+    margin-right: 3%;
+}
+#pro{
+    border: none;
+    margin-bottom: 4%;
+    border-bottom: 1px solid black;
+}
+
+
+
+
+#process input{
+    display: flex;
+}
+.path{
+    color: #8686867d;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.showing-data{
+    margin-left: 20px;
+}
+#menu{
+    display: flex;
+    border-bottom: 1px solid rgba(77, 77, 77, 0.09);
+}
+#menu button{
+    background: none;
+    border: none;
+    padding: 15px;
+}
+/* #menu button:active{
+    border-bottom: 3px solid blue;
+    width: auto;
+} */
+#divMain{
+    display: grid;
+    grid-template-columns: 20% 30% 320px;
+    gap: 80px;
+
+   border-bottom: 1px solid rgba(70, 68, 68, 0.566);
+   /* border-top: 1px solid rgba(77, 77, 77, 0.31); */
+  
+   margin-top: 20px;
+   margin-bottom: 20px;
+   background-color: rgb(255, 255, 255);
+}
+
+#ul{
+   /* text-align: end; */
+   margin-left: 30px;
+   background-color: white;
+}
+
+#div2{
+    /* border: 1px solid red; */
+    width: 140%;
+    background-color: white;
+}
+#div3{
+    margin-left: 25%;
+    background-color: white;
+}
+#productContainer{
+    align-items: center;
+    margin: auto;
+    margin-top: 5%;
+    /* margin-left: 20%; */
+    background-color: white;
+}
+
+

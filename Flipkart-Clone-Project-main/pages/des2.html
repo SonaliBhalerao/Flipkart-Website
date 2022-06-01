@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/nav-modal.css" />
+    <link rel="stylesheet" href="../style/info-footer.css" />
+    <link rel="stylesheet" href="../style/main-footer.css" />
+    <style>
+      #container {
+        /* border: 2px solid red; */
+        width: 70%;
+        padding: 20px;
+        display: flex;
+        margin: auto;
+        padding-top: 5rem;
+      }
+      #container img {
+        height: 400px;
+        /* padding: 20px; */
+        border-radius: 5px;
+      }
+      div1 {
+        /* border: 2px solid red; */
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      div2 {
+        margin: 0px;
+        /* border: 2px solid gray; */
+        margin-left: 80px;
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+
+      div5 {
+        display: flex;
+        gap: 20px;
+        /* border: 2px solid blue; */
+        font-size: 20px;
+      }
+      div5 > s {
+        margin-top: 19px;
+        font-size: 20px;
+      }
+      div3 {
+        height: 40px;
+        width: 100%;
+      }
+      #btndiv {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 3rem;
+      }
+      #btn1 {
+        background-color: orange;
+        color: white;
+        font-size: 20px;
+        padding: 5px;
+        height: 60px;
+        cursor: pointer;
+        width: 200px;
+        border: none;
+      }
+      #btn2 {
+        background-color: rgb(230, 91, 5);
+        color: white;
+        font-size: 20px;
+        padding: 5px;
+        height: 60px;
+        width: 200px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="navbar"></header>
+    <div id="container"></div>
+    <div id="btndiv">
+      <button id="btn1">Add to Cart</button>
+      <button id="btn2">BUY</button>
+    </div>
+    <footer>
+      <div id="info-footer"></div>
+      <div id="main-footer"></div>
+    </footer>
+  </body>
+</html>
+<script type="module">
+  let infoFoo = document.querySelector("#info-footer");
+  console.log(infoFoo);
+  import { informFooter } from "../components/info-footer.js";
+  infoFoo.innerHTML = informFooter();
+
+  let mainFoo = document.querySelector("#main-footer");
+  import { mainFooter } from "../components/main-footer.js";
+  mainFoo.innerHTML = mainFooter();
+
+  let navbar = document.querySelector("#navbar");
+  import { Navbar } from "../components/navbar.js";
+  navbar.innerHTML = Navbar();
+</script>
+<script type="module" src="../script/navbarScript.js"></script>
+<script>
+  var container = document.getElementById("container");
+  // var arr=[];
+  var go_data = JSON.parse(localStorage.getItem("description"));
+  console.log(go_data);
+  displayData(go_data);
+  // arr.push(go_data)
+  // console.log(arr)
+  function displayData(arr) {
+    container.innerHTML = null;
+    arr.forEach(function (elem) {
+      if (elem.price.extracted == undefined) {
+        return;
+      }
+
+      var main = document.createElement("div");
+      var div1 = document.createElement("div1");
+      var div2 = document.createElement("div2");
+      var div3 = document.createElement("div3");
+      var div4 = document.createElement("div5");
+      var img = document.createElement("img");
+      img.src = elem.thumbnail;
+      div1.append(img);
+
+      var title = document.createElement("h2");
+      title.innerText = elem.title;
+      let four = document.createElement("button");
+      four.innerText = "4.4 *";
+      four.style.padding = "5px";
+
+      four.style.color = "white";
+      four.style.backgroundColor = "green";
+      let five = document.createElement("p");
+      five.innerHTML = "24,924 Ratings & 23,345 Reviews";
+      five.style.color = "#878787";
+
+      let assured = document.createElement("img");
+      assured.src =
+        "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png";
+      assured.style.height = "20px";
+      assured.style.marginLeft = "20px";
+      assured.style.width = "130px";
+      div3.style.display = "flex";
+      div3.style.gap = "5px";
+      div3.style.margin = "20px";
+      div3.append(four, five, assured);
+      var price = document.createElement("h2");
+      price.innerText = "₹" + Math.floor(Number(elem.price.extracted * 71));
+      let two = document.createElement("s");
+      two.innerHTML = "₹1200 Off";
+      div4.append(price, two);
+      var text = document.createElement("h2");
+      text.innerHTML = "Available Offers";
+      var text1 = document.createElement("p");
+      text1.innerHTML =
+        "Bank Offer: Flat $50 Instant Cashback on Paytm Wallet min Order Value $500. Valid one per Year";
+      text3 = document.createElement("p");
+      text3.innerHTML = "Bank Offer:5% cashback on Flipcart Axis bank Card";
+      text4 = document.createElement("p");
+      text4.innerHTML = "No cost EMI $2342/month. standard EMI also avaiable";
+      div2.append(title, div3, div4, text, text3, text4);
+
+      main.append(div1, div2);
+      main.style.display = "flex";
+
+      container.append(main);
+    });
+  }
+  let product = JSON.parse(localStorage.getItem("product")) || [];
+  console.log(product);
+  let add2cart = document.querySelector("#btn1");
+  // console.log(add2cart)
+  add2cart.onclick = () => {
+    window.location.href = "cart.html";
+    product.push(go_data[0]);
+    go_data[0].qty = 1;
+
+    localStorage.setItem("product", JSON.stringify(product));
+  };
+</script>
